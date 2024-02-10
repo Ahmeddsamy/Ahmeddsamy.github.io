@@ -11,14 +11,7 @@
 
 // function showpage(){
 //     document.getElementsByClassName("loaded").style.display = 'none';
-//     document.getElementById("Portfolio").style.display = 'block';
-
-// }
-document.addEventListener("DOMContentLoaded", (event) => {
-  const themeSwitch = document.getElementById("checkbox");
-  themeSwitch.addEventListener("change", () => {
-    document.body.classList.toggle("dark-theme");
-  });
+//     document.getElementById("Portfolio").style.display = '
 
   /*===== MENU SHOW =====*/
   const showMenu = (toggleId, navId) => {
@@ -82,5 +75,3 @@ document.addEventListener("DOMContentLoaded", (event) => {
   sr.reveal(".home__social-icon", { interval: 200 });
   sr.reveal(".skills__data, .work__img, .contact__input", { interval: 200 });
 
-  // Rest of your JS code...
-});
