@@ -10,6 +10,10 @@
   --hue-color: 224;
   --first-color: hsl(var(--hue-color), 89%, 60%);
   --second-color: hsl(var(--hue-color), 56%, 12%);
+  /* other colors */
+  --text-color: #000; /* default text color */
+  --background-color: #fff; /* default background color */
+  /* add other light theme colors */
   /*===== Fuente y tipografia =====*/
   --body-font: "Poppins", sans-serif;
   --big-font-size: 2rem;
@@ -89,7 +93,11 @@ div::before{
       left: 0;
   }
 } */
-
+body.dark-theme {
+  --text-color: #fff; /* dark theme text color */
+  --background-color: #1a1a1a; /* dark theme background color */
+  /* redefine other colors for dark theme */
+}
 body {
   margin: var(--header-height) 0 0 0;
   font-family: var(--body-font);
@@ -344,17 +352,9 @@ img {
   z-index: var(--z-back);
 }
 .skills__html {
-  width: 95%;
+  width: 100%;
 }
-.skills__css {
-  width: 95%;
-}
-.skills__js {
-  width: 75%;
-}
-.skills__ux {
-  width: 75%;
-}
+
 .skills__img {
   border-radius: 0.5rem;
 }
@@ -537,4 +537,58 @@ img {
   .home__img {
     width: 450px;
   }
+}
+
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  background-color: white;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: #000601;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
